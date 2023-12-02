@@ -5,12 +5,12 @@ export class GetMovies {
 }
 
 export class GetSelectedMovie {
-  static readonly type = '[Movie List Page] Get Selected Movie';
+  static readonly type = '[Movie Details Page] Get Selected Movie';
   constructor(public id: number) {}
 }
 
 export class GetWatchList {
-  static readonly type = '[Movie List Page] Get WatchList';
+  static readonly type = '[Watch List Page] Get WatchList';
 }
 
 export class AddMovieToWatchList {
@@ -19,7 +19,7 @@ export class AddMovieToWatchList {
 }
 
 export class RemoveMovieToWatchList {
-  static readonly type = '[Movie List Page] Remove Movie To Watchlist';
+  static readonly type = '[Watch List Page] Remove Movie To Watchlist';
   constructor(public id: number) {}
 }
 
@@ -29,12 +29,12 @@ export class SortMovies {
 }
 
 export class SortWatchList {
-  static readonly type = '[Movie List Page] Sort Movie WatchList';
+  static readonly type = '[Watch List Page] Sort Movie WatchList';
   constructor(public sort: Sort) {}
 }
 
 export class UpdateMovieStatus {
-  static readonly type = '[Movie List Page] Update Movie Status';
+  static readonly type = '[APP STATE] Update Movie Status';
   constructor(public id: number, public status: 'add' | 'remove') {}
 }
 
@@ -44,6 +44,6 @@ export class ShowAlert {
 }
 
 export class HideAlert {
-  static readonly type = '[Movie List Page] Hide Alert';
+  static readonly type = '[APP STATE] Hide Alert';
   constructor(public alert: MessageInfo) {}
 }

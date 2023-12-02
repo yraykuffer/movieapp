@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { AppState } from 'src/app/store/app.state';
 import { Movie } from 'src/app/models/types';
 import { GetMovies, GetWatchList, SortMovies } from 'src/app/store/app.actions';
@@ -41,7 +41,6 @@ export class MovieListComponent implements OnInit{
   }
 
   sortMovie() {
-    console.log(this.sortBy)
     this.store.dispatch(new SortMovies({
       by: this.sortBy,
       order: this.order

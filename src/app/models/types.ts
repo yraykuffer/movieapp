@@ -1,5 +1,10 @@
 import { SafeResourceUrl } from "@angular/platform-browser";
 
+export enum SORT_BY {
+  TITLE = 'title',
+  RELEASED_DATE = 'releasedDate'
+}
+
 export type Movie = {
   id: number;
   title: string;

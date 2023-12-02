@@ -3,13 +3,6 @@ import { Select } from '@ngxs/store';
 import { AppState } from './store/app.state';
 import { Observable } from 'rxjs';
 import { ActivationEnd, Router } from '@angular/router';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { MessageInfo } from './models/types';
 
 @Component({
@@ -27,7 +20,6 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof ActivationEnd) {
-        console.log(event.snapshot.data, event.snapshot);
         this.breadcrumbs = event.snapshot.data['breadcrumbs'];
       }
     });

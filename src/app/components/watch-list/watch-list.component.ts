@@ -29,7 +29,6 @@ export class WatchListComponent {
 
     this.store.dispatch([new GetWatchList()]);
     this.store.select(AppState.getSortOrder).pipe(take(1)).subscribe(sort => {
-      console.log('sort select', sort)
       this.sortBy = sort.by;
       this.order = sort.order;
       this.store.dispatch(new SortWatchList(sort));
@@ -42,7 +41,6 @@ export class WatchListComponent {
   }
 
   sortMovie() {
-    console.log(this.sortBy)
     this.store.dispatch(new SortWatchList({
       by: this.sortBy,
       order: this.order
