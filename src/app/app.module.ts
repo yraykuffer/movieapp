@@ -9,6 +9,9 @@ import { MovieComponent } from './components/movie/movie.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { WatchListComponent } from './components/watch-list/watch-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { AppState } from './store/app.state';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule.forRoot([])
+    CommonModule,
+    FormsModule,
+    NgxsModule.forRoot([AppState])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,43 @@
+:host {
+  width: 100%;
+}
+
+.movie-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.justify-left {
+  justify-content: flex-start;
+}
+
+.movie-header-sort, .movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  gap: 10px;
+}
+
+.movie-header-sort select {
+  font-size: 18px;
+  padding: 5px;
+  color: var(--text-color);
+  border-radius: 5px;
+}
+
+.material-icons{
+  cursor: pointer;
+}
+
+.asc {
+  transform: rotate(90deg)
+}
+
+.desc {
+  transform: rotate(-90deg)
+}
+

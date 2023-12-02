@@ -12,6 +12,7 @@ export const MOVIES: Movie[] = [
     genre: 'Action, Sci-Fi',
     releasedDate: '3 September 2020',
     trailerLink: 'https://www.youtube.com/watch?v=LdOM0x0XDMo',
+    thumpnail: 'Tenet.png'
   },
   {
     id: 2,
@@ -22,27 +23,7 @@ export const MOVIES: Movie[] = [
     genre: 'Action, Animation, Adventure',
     releasedDate: '14 December 2018',
     trailerLink: 'https://www.youtube.com/watch?v=tg52up16eq0',
-  },
-  {
-    id: 3,
-    title: `Knives Out`,
-    description: `A detective investigates the death of a patriarch of an eccentric, combative family.`,
-    rating: 7.9,
-    duration: '2h 10min',
-    genre: 'Comedy, Crime, Drama',
-    releasedDate: '27 November 2019',
-    trailerLink: ' https://www.youtube.com/watch?v=qGqiHJTsRkQ',
-  },
-  {
-    id: 4,
-    title: `Guardians of the Galaxy`,
-    description: `A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to
-    purge the universe.`,
-    rating: 8.0,
-    duration: '2h 1min',
-    genre: 'Action, Adventure, Comedy',
-    releasedDate: '1 August 2014',
-    trailerLink: 'https://www.youtube.com/watch?v=d96cjJhvlMA',
+    thumpnail: 'Spider Man.png'
   },
   {
     id: 5,
@@ -55,5 +36,30 @@ export const MOVIES: Movie[] = [
     genre: 'Action, Adventure, Sci-Fi',
     releasedDate: '1 May 2015',
     trailerLink: 'https://www.youtube.com/watch?v=tmeOjFno6Do ',
+    thumpnail: 'Avengers.png'
   },
+  {
+    id: 3,
+    title: `Knives Out`,
+    description: `A detective investigates the death of a patriarch of an eccentric, combative family.`,
+    rating: 7.9,
+    duration: '2h 10min',
+    genre: 'Comedy, Crime, Drama',
+    releasedDate: '27 November 2019',
+    trailerLink: ' https://www.youtube.com/watch?v=qGqiHJTsRkQ',
+    thumpnail: 'Knives Out.png'
+  },
+  {
+    id: 4,
+    title: `Guardians of the Galaxy`,
+    description: `A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to
+    purge the universe.`,
+    rating: 8.0,
+    duration: '2h 1min',
+    genre: 'Action, Adventure, Comedy',
+    releasedDate: '1 August 2014',
+    trailerLink: 'https://www.youtube.com/watch?v=d96cjJhvlMA',
+    thumpnail: 'Guardians of The Galaxy.png'
+  },
+
 ];

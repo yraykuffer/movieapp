@@ -1,0 +1,8 @@
+.movie-container {
+  height: 100%;
+}
+
+.movie-container img {
+  width: 250px;
+  height: 100%;
+}

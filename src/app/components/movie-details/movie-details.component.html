@@ -1,1 +1,39 @@
-<p>movie-details works!</p>
+<div class="movie-detail-container">
+  <h2>{{ movie.title }}</h2>
+  <iframe
+    width="560"
+    height="315"
+    [src]="movie.trailerLink"
+    class="youtube-player"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+  <div class="movie-details">
+    <div style="display: flex; flex-direction: row; gap: 20px">
+      <!-- description: `A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.`,
+    rating: 8.0,
+    duration: "2h 1min",
+    genre: "Action, Adventure, Comedy",
+    releasedDate: "1 August 2014",
+    trailerLink: "https://www.youtube.com/watch?v=d96cjJhvlMA",
+    thumpnail: "Guardians of The Galaxy.png", -->
+      <img
+        class="thumpnail"
+        src="/assets/images/{{ movie.thumpnail }}"
+        alt=""
+      />
+      <div class="movie-details-text">
+        <p>Description: {{ movie.description }}</p>
+        <p>Genre: {{ movie.genre }}</p>
+        <p>Rating: {{ movie.rating }}</p>
+        <p>Duration: {{ movie.duration }}</p>
+        <p>Date Released: {{ movie.releasedDate }}</p>
+        <button [class.listed]="movie.listed" (click)="addToWatchList()">
+          {{movie.listed ? 'Added' : 'Add'}} to Watchlist
+        </button>
+      </div>
+    </div>
+    <div></div>
+  </div>
+</div>
