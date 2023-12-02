@@ -96,8 +96,6 @@ p {
   display: none !important;
 }
 
-
-
 .watch-list {
   display: flex;
   align-items: center;
@@ -137,8 +135,6 @@ p {
   align-items: center;
 }
 
-
-
 footer {
   margin-top: 8px;
   display: flex;
@@ -151,3 +147,48 @@ footer a {
   align-items: center;
 }
 
+.decor {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* background: rgb(122, 96, 255); */
+  position: fixed;
+  top: 0;
+  /* transform: rotate(71deg); */
+  z-index: -1;
+
+  /* transform: rotate(69deg) translate(100px, -226px); */
+}
+
+.spot1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #cd9ffa;
+  top: 22%;
+  left: 10%;
+  filter: blur(100px);
+  -webkit-filter: blur(100px);
+}
+
+.spot2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #cd9ffa;
+  top: 36%;
+  left: 10%;
+  filter: blur(105px);
+  -webkit-filter: blur(105px);
+}
+
+.spot3 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: var(--primary-color);
+  top: 62%;
+  left: 32%;
+  filter: blur(127px);
+  -webkit-filter: blur(127px);
+}

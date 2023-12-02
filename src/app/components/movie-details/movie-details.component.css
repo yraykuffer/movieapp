@@ -18,12 +18,46 @@
 
 .thumpnail {
   width: 150px;
+  height: 230px;
 }
 .youtube-player {
   border: 0;
   width: 100%;
   height: 536px;
   background-color: black;
+}
+
+.rating {
+  padding: 2px;
+  padding-left: 10px;
+  background: orange;
+  border-radius: 4px;
+  padding-right: 10px;
+  margin-left: 5px;
+}
+
+.desc-container {
+  display: flex;
+  background: rgb(122, 96, 255);
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.desc-container p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.thumpnail-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .youtube-player {
+    height: 300px;
+  }
 }
 
 .listed {

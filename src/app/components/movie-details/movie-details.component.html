@@ -10,21 +10,27 @@
     allowfullscreen
   ></iframe>
   <div class="movie-details">
-    <div style="display: flex; flex-direction: row; gap: 20px">
-      <img
-        class="thumpnail"
-        src="assets/images/{{ movie.thumpnail}}"
-        alt=""
-      />
-      <div class="movie-details-text">
-        <p>Description: {{ movie.description }}</p>
-        <p>Genre: {{ movie.genre }}</p>
-        <p>Rating: {{ movie.rating }}</p>
-        <p>Duration: {{ movie.duration }}</p>
-        <p>Date Released: {{ movie.releasedDate }}</p>
-        <button [class.listed]="movie.listed" (click)="addToWatchList()">
-          {{movie.listed ? 'Added' : 'Add'}} to Watchlist
-        </button>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <div class="desc-container"><p> {{ movie.description }}</p></div>
+      <div class="thumpnail-container">
+        <img
+          class="thumpnail"
+          src="assets/images/{{ movie.thumpnail }}"
+          alt=""
+        />
+        <div class="movie-details-text">
+
+          <p><strong>Genre:</strong> {{ movie.genre }}</p>
+          <p>
+            <strong>Rating:</strong>
+            <span class="rating">{{ movie.rating }}</span>
+          </p>
+          <p><strong>Duration:</strong> {{ movie.duration }}</p>
+          <p><strong>Date Released:</strong> {{ movie.releasedDate }}</p>
+          <button [class.listed]="movie.listed" (click)="addToWatchList()">
+            {{ movie.listed ? "Added" : "Add" }} to Watchlist
+          </button>
+        </div>
       </div>
     </div>
     <div></div>
