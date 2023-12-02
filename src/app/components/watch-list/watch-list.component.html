@@ -1,1 +1,20 @@
-<p>watch-list works!</p>
+<div class="movie-header">
+  <h1>{{ title }}</h1>
+  <div class="movie-header-sort">
+    <label for="sortBy">Sort By</label>
+    <select name="" id="sortBy" [(ngModel)]="sortBy" (change)="sortMovie()">
+      <option value="title">Title</option>
+      <option value="releasedDate">Released Date</option>
+    </select>
+    <i class="material-icons {{ order }}" (click)="toggleOrder()"
+      >switch_right</i
+    >
+  </div>
+</div>
+<div class="movie-container">
+  <movie
+    *ngFor="let movie of movies$ | async"
+    [movie]="movie"
+    [onWatchList]="true"
+  ></movie>
+</div>

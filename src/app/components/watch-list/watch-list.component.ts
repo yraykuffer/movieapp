@@ -1,29 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { Movie } from 'src/app/models/types';
-import { AddMovieToWatchList, GetMovies } from 'src/app/store/app.actions';
+import { AddMovieToWatchList, GetMovies, GetWatchList, SortMovies, SortWatchList } from 'src/app/store/app.actions';
 import { AppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-watch-list',
   templateUrl: './watch-list.component.html',
-  styleUrls: ['./watch-list.component.css']
+  styleUrls: ['../movie-list/movie-list.component.css']
 })
 export class WatchListComponent {
 
-  @Select(AppState.watchList) watchList$!: Observable<Movie[]>;
-  @Select(AppState.movies) movies$!: Observable<Movie[]>;
+  @Input() movies!: Movie[];
+  @Input() listTitle!: string;
 
-  constructor(private store: Store) {
-    this.store.dispatch(new GetMovies());
+  sortBy: string = 'title';
+  order: 'asc' | 'desc' = 'asc';
 
-    this.movies$.subscribe((movies) => {
-      console.log(movies)
-      this.store.dispatch([new AddMovieToWatchList(movies[1]), new AddMovieToWatchList(movies[0])]);
-    });
 
-    this.watchList$.subscribe(console.log)
+  @Select(AppState.watchList) movies$!: Observable<Movie[]>;
+
+  title: string = 'Movies on Watchlist';
+
+  constructor(public store: Store, public activatedRoute: ActivatedRoute) {
+
+    this.store.dispatch([new GetWatchList()]);
+    this.store.select(AppState.getSortOrder).pipe(take(1)).subscribe(sort => {
+      console.log('sort select', sort)
+      this.sortBy = sort.by;
+      this.order = sort.order;
+      this.store.dispatch(new SortWatchList(sort));
+    })
+
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  sortMovie() {
+    console.log(this.sortBy)
+    this.store.dispatch(new SortWatchList({
+      by: this.sortBy,
+      order: this.order
+    }));
+  }
+
+  toggleOrder() {
+    this.order = this.order === 'asc' ? 'desc' : 'asc';
+    this.store.dispatch(new SortWatchList({
+      by: this.sortBy,
+      order: this.order
+    }));
   }
 
 }

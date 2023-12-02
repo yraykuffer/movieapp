@@ -35,7 +35,7 @@ export const MOVIES: Movie[] = [
     duration: '2h 21min',
     genre: 'Action, Adventure, Sci-Fi',
     releasedDate: '1 May 2015',
-    trailerLink: 'https://www.youtube.com/watch?v=tmeOjFno6Do ',
+    trailerLink: 'https://www.youtube.com/watch?v=tmeOjFno6Do',
     thumpnail: 'Avengers.png'
   },
   {

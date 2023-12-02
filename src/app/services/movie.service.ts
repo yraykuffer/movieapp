@@ -8,6 +8,30 @@ export class MovieService {
 
   constructor() { }
 
+  getWatchList(): Movie[] {
+    const lsMovies = localStorage.getItem('movies');
+    if (lsMovies) {
+      return JSON.parse(lsMovies) as Movie[];
+    } else {
+      return [];
+    }
+  }
+
+
+  addToWatchList(movie: Movie) {
+    const movies = this.getWatchList();
+    const exists = movies.find(m => m.id === movie.id);
+    if (!exists) {
+      localStorage.setItem('movies', JSON.stringify([...movies, movie]));
+    }
+  }
+
+  removeToWatchList(id: number) {
+    const movies = this.getWatchList().filter(mov => mov.id !== id);
+    localStorage.setItem('movies', JSON.stringify(movies));
+  }
+
+
   sortMovies(movies: Movie[], sort: Sort): Movie[] {
     let sortedMovies: Movie[] = [];
     if (movies.length) {

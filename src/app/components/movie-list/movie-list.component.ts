@@ -29,9 +29,9 @@ export class MovieListComponent implements OnInit{
 
     this.store.dispatch([new GetWatchList(), new GetMovies()]);
     this.store.select(AppState.getSortOrder).subscribe(sort => {
-      console.log('sort select', sort)
       this.sortBy = sort.by;
       this.order = sort.order;
+      this.store.dispatch(new SortMovies(sort));
     })
 
   }

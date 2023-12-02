@@ -1,3 +1,10 @@
 <div class="movie-container">
   <img src="/assets/images/{{movie.thumpnail}}" alt="" [routerLink]="['/movies', movie.id]" routerLinkActive="router-link-active" >
+  <div class="movie-detail">
+    <p class="movie-title ">{{movie.title}}</p>
+    <p style="font-size: 12px">{{movie.releasedDate}}</p>
+    <button *ngIf="!onWatchList" [class.listed]="movie.listed" [disabled]="movie.listed" (click)="addToWatchList()">
+      {{movie.listed ? 'On my Watchlist' : 'Add to Watchlist'}}
+    </button>
+  </div>
 </div>

@@ -5,6 +5,7 @@ import { Movie } from 'src/app/models/types';
 import {
   AddMovieToWatchList,
   GetSelectedMovie,
+  GetWatchList,
   RemoveMovieToWatchList,
 } from 'src/app/store/app.actions';
 import { AppState } from 'src/app/store/app.state';
@@ -27,9 +28,7 @@ export class MovieDetailsComponent {
   ) {
     const id = this.activatedRoute.snapshot.params['id'];
 
-    console.log('id', id);
-
-    this.store.dispatch(new GetSelectedMovie(Number(id)));
+    this.store.dispatch([new GetWatchList(), new GetSelectedMovie(Number(id))]);
 
     this.movie$.pipe(take(1)).subscribe((movie) => {
       if (movie) {

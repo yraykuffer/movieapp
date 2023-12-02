@@ -66,7 +66,19 @@ export class AppState {
   @Action(GetWatchList)
   getWatchList(ctx: StateContext<AppStateModel>) {
     const state = ctx.getState();
-    ctx.setState({...state, watchList: [...state.watchList]})
+    const watchList = this.movieService.getWatchList();
+    if (watchList.length) {
+      const movieIds = watchList.map(({id}) => id)
+      const movies = state.movies.map(mov => {
+         if(movieIds.includes(mov.id)) {
+          mov.listed = true;
+         };
+         return mov;
+      });
+
+      ctx.setState({...state, movies, watchList})
+    }
+
   }
 
 
@@ -76,8 +88,13 @@ export class AppState {
     const movie = state.movies.find(movie => movie.id === id);
     if (movie) {
       movie.listed = status === 'add';
+
+      if (status === 'add') {
+        this.movieService.addToWatchList(movie);
+      } else {
+        this.movieService.removeToWatchList(id);
+      }
     }
-    // ctx.patchState({movies: [...state.movies]})
     ctx.setState({...state, movies: state.movies})
   }
 
@@ -96,6 +113,11 @@ export class AppState {
   @Selector()
   static watchList(state: AppStateModel) {
     return state.watchList;
+  }
+
+  @Selector()
+  static counter(state: AppStateModel) {
+    return state.watchList.length;
   }
 
 

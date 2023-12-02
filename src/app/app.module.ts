@@ -12,6 +12,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { AppState } from './store/app.state';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     MovieComponent,
     MovieListComponent,
     WatchListComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
