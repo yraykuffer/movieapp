@@ -21,8 +21,9 @@ export class WatchListComponent {
 
 
   @Select(AppState.watchList) movies$!: Observable<Movie[]>;
+  @Select(AppState.counter) counter$!: Observable<number>;
 
-  title: string = 'Movies on Watchlist';
+  title: string = 'My Watchlist';
 
   constructor(public store: Store, public activatedRoute: ActivatedRoute) {
 

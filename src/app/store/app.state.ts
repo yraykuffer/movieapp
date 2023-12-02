@@ -2,7 +2,7 @@ import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { AppStateModel, Movie, Sort } from '../models/types';
 import { Injectable } from '@angular/core';
 import { MOVIES } from './dummy';
-import { AddMovieToWatchList, GetMovies, GetSelectedMovie, GetWatchList, RemoveMovieToWatchList, SortMovies, SortWatchList, UpdateMovieStatus } from './app.actions';
+import { AddMovieToWatchList, GetMovies, GetSelectedMovie, GetWatchList, HideAlert, RemoveMovieToWatchList, ShowAlert, SortMovies, SortWatchList, UpdateMovieStatus } from './app.actions';
 import { MovieService } from '../services/movie.service';
 
 @State<AppStateModel>({
@@ -15,6 +15,7 @@ import { MovieService } from '../services/movie.service';
       by: 'title',
       order: 'asc',
     },
+    showMessage: null
   },
 })
 @Injectable()
@@ -98,6 +99,26 @@ export class AppState {
     ctx.setState({...state, movies: state.movies})
   }
 
+  @Action(ShowAlert)
+  showAlert(ctx: StateContext<AppStateModel>, {alert}: ShowAlert) {
+    const state = ctx.getState();
+    alert.visible = true;
+
+    ctx.setState({...state, showMessage: alert});
+    // ctx.dispatch(new HideAlert());
+    const timeout = setTimeout(() => {
+      ctx.dispatch(new HideAlert({...alert, visible: false}));
+      clearTimeout(timeout);
+    }, 2000);
+  }
+
+  @Action(HideAlert)
+  hideAlert(ctx: StateContext<AppStateModel>, {alert}: ShowAlert) {
+    const state = ctx.getState();
+
+    ctx.setState({...state, showMessage: alert})
+  }
+
 
   // Selectors
   @Selector([AppState])
@@ -124,5 +145,10 @@ export class AppState {
   @Selector()
   static getSortOrder(state: AppStateModel) {
     return state.sortBy;
+  }
+
+  @Selector()
+  static showMessage(state: AppStateModel) {
+    return state.showMessage;
   }
 }

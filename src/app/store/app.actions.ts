@@ -1,4 +1,4 @@
-import { Movie, Sort } from "../models/types";
+import { MessageInfo, Movie, Sort } from "../models/types";
 
 export class GetMovies {
   static readonly type = '[Movie List Page] Get Movies';
@@ -36,4 +36,14 @@ export class SortWatchList {
 export class UpdateMovieStatus {
   static readonly type = '[Movie List Page] Update Movie Status';
   constructor(public id: number, public status: 'add' | 'remove') {}
+}
+
+export class ShowAlert {
+  static readonly type = '[Movie List Page] Show Alert';
+  constructor(public alert: MessageInfo) {}
+}
+
+export class HideAlert {
+  static readonly type = '[Movie List Page] Hide Alert';
+  constructor(public alert: MessageInfo) {}
 }

@@ -1,1 +1,7 @@
-<p>breadcrumb works!</p>
+<p>
+  <ng-container *ngFor="let nav of breadcrumbs; first as isFirst">
+    <ng-container *ngIf="!isFirst"> > </ng-container>
+    <span class="clickable" *ngIf="nav.path" [routerLink]="[nav.path]">{{nav.label}}</span>
+    <span *ngIf="!nav.path" class="router-link-active">{{nav.label}}</span>
+  </ng-container>
+</p>

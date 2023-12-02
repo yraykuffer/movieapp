@@ -13,8 +13,9 @@
 </div>
 <div class="movie-container">
   <movie
-    *ngFor="let movie of movies$ | async"
+    *ngFor="let movie of movies$ | async as movies"
     [movie]="movie"
     [onWatchList]="true"
   ></movie>
+  <div *ngIf="!(counter$ | async)">No movies on watchlist</div>
 </div>

@@ -1,0 +1,12 @@
+.router-link-active {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  color: var(--primary-color);
+}

@@ -13,6 +13,8 @@ import { AppState } from './store/app.state';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     MovieListComponent,
     WatchListComponent,
     MovieDetailsComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
+    BrowserAnimationsModule,
     NgxsModule.forRoot([AppState])
   ],
   providers: [],

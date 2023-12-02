@@ -50,6 +50,25 @@ button {
   padding: 5px;
   width: fit-content;
   cursor: pointer;
+  align-self: flex-end;
+}
+.delete-icon {
+
+  position: absolute;
+  height: 20px;
+  top: -18px;
+  right: -13px;
+  display: block;
+  border-radius: 100%;
+  border: 1px solid white;
+  box-shadow: var(--shadow);
+  display: none;
+  cursor: pointer;
+
+}
+
+.movie-container:hover .delete-icon {
+  display: block;
 }
 
 button:not(.listed):hover {

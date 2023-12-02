@@ -17,7 +17,14 @@ export type AppStateModel = {
   movies: Movie[],
   watchList: Movie[],
   selectedMovie: Movie | null,
-  sortBy: Sort
+  sortBy: Sort,
+  showMessage: MessageInfo | null
+}
+
+export type MessageInfo = {
+  type: 'error' | 'info',
+  message: string;
+  visible?: boolean;
 }
 
 export type Sort = {

@@ -8,19 +8,75 @@ const routes: Routes = [
   {
     path: "",
     redirectTo: "/movies",
-    pathMatch: "full"
+    pathMatch: "full",
+    data: {
+      breadcrumbs: [
+        {
+          path: '/',
+          label: 'Home',
+        },
+        {
+          path: '',
+          label: 'Movies'
+        }
+      ]
+    }
   },
   {
     path: "movies",
-    component: MovieListComponent
+    component: MovieListComponent,
+    data: {
+      breadcrumbs: [
+        {
+          path: '/',
+          label: 'Home',
+        },
+        {
+          path: '',
+          label: 'Movies'
+        }
+      ]
+    }
   },
   {
     path: "movies/:id",
-    component: MovieDetailsComponent
+    component: MovieDetailsComponent,
+    data: {
+      breadcrumbs: [
+        {
+          path: '/',
+          label: 'Home',
+        },
+        {
+          path: '/movies',
+          label: 'Movies'
+        },
+        {
+          path: '',
+          label: 'Detail'
+        }
+      ]
+    }
   },
   {
     path: "watchlist",
-    component: WatchListComponent
+    component: WatchListComponent,
+    data: {
+      breadcrumbs: [
+        {
+          path: '/',
+          label: 'Home',
+        },
+        {
+          path: '/movies',
+          label: 'Movies',
+        },
+        {
+          path: '',
+          label: 'Watchlist'
+        }
+      ]
+    }
   }
 ];
 
