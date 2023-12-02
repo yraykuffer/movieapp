@@ -7,6 +7,7 @@ import {
   GetSelectedMovie,
   GetWatchList,
   RemoveMovieToWatchList,
+  ShowAlert,
 } from 'src/app/store/app.actions';
 import { AppState } from 'src/app/store/app.state';
 import { Observable, take } from 'rxjs';
@@ -45,8 +46,20 @@ export class MovieDetailsComponent {
     if (!this.movie.listed) {
       this.movie.listed = true;
       this.store.dispatch(new AddMovieToWatchList(this.movie));
+      this.store.dispatch(
+        new ShowAlert({
+          type: 'info',
+          message: `${this.movie.title} was successfully added`,
+        })
+      );
     } else {
       this.movie.listed = false;
+      this.store.dispatch(
+        new ShowAlert({
+          type: 'info',
+          message: `${this.movie.title} was successfully removed`,
+        })
+      );
       this.store.dispatch(new RemoveMovieToWatchList(this.movie.id));
     }
   }
