@@ -34,15 +34,16 @@ p {
   height: 60px;
   display: flex;
   align-items: center;
-  background: #7a60ff;
-  background: linear-gradient(to left, #7a60ff, #cd9ffa);
+  background: var(--primary-color);
+  /* background: linear-gradient(to left, #7a60ff, #cd9ffa); */
   color: white;
   font-weight: 600;
   z-index: 9;
   -webkit-backface-visibility: hidden;
   gap: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-shadow: var(--shadow);
 }
 
 .counter {

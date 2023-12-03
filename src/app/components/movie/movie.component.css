@@ -3,7 +3,7 @@
 }
 .movie-container {
   height: 378px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow);
   transition: all 0.25s;
   position: relative;
   border: 9px solid white;
