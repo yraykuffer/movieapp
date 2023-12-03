@@ -16,9 +16,6 @@ MIT
 @angular/router
 MIT
 
-@ngxs/storage-plugin
-MIT
-
 @ngxs/store
 MIT
 
