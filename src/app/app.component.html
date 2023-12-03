@@ -70,7 +70,11 @@
       routerLinkActive="router-link-active"
     >
       <h3>View Watchlist</h3>
-      <div class="counter">{{ counter$ | async }}</div>
+      <ng-container *ngFor="let counter of [counter$ | async]">
+        <div class="counter animate__animated animate__heartBeat" >{{ counter }}</div>
+      </ng-container>
+
+
     </div>
   </div>
 
