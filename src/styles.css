@@ -3,6 +3,7 @@
   --primary-color: #7a60ff;
   --accent-color: green;
   --shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  --shadow-1: 0 0 10px rgba(0, 0, 0, 0.1);
   --animate-duration: 1s;
   --animate-delay: 1s;
   --animate-repeat: 1;

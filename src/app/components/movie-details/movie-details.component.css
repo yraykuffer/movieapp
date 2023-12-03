@@ -25,6 +25,7 @@
   width: 100%;
   height: 536px;
   background-color: black;
+  box-shadow: var(--shadow);
 }
 
 .rating {
@@ -50,6 +51,13 @@
 .desc-container p {
   font-size: 16px;
   margin: 0;
+
+  padding: 10px;
+  font-style: italic;
+}
+
+.desc-container p:hover, .thumpnail:hover {
+  box-shadow: var(--shadow-1);
 }
 
 .thumpnail-container {
@@ -95,10 +103,17 @@
   border: 0;
   border-radius: 5px;
   padding: 5px;
+
 }
 
 button {
   border: 1px solid gray;
   border-radius: 5px;
   padding: 5px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightblue;
 }
