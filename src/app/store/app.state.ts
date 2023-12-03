@@ -6,7 +6,7 @@ import { AddMovieToWatchList, GetMovies, GetSelectedMovie, GetWatchList, HideAle
 import { MovieService } from '../services/movie.service';
 
 @State<AppStateModel>({
-  name: 'zoo',
+  name: 'movieapp',
   defaults: {
     movies: MOVIES,
     selectedMovie: null,
