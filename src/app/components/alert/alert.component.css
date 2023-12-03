@@ -10,4 +10,5 @@
   top: 65px;
   right: 10px;
   z-index: 2;
+  box-shadow: var(--shadow);
 }

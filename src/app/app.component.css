@@ -107,10 +107,6 @@ p {
   color: var(--primary-color);
 }
 
-.toolbar img {
-  margin: 0 16px;
-}
-
 .toolbar #twitter-logo {
   height: 40px;
   margin: 0 8px;
