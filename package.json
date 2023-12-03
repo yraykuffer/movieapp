@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start:custom": "ng serve --host 0.0.0.0"
+    "start:custom": "ng serve --host 0.0.0.0",
+    "build:prod": "ng build --configuration production --base-href https://yraykuffer.github.io/movieapp/"
   },
   "private": true,
   "dependencies": {
