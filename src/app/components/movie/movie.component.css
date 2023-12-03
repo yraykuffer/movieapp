@@ -5,12 +5,24 @@
   position: relative;
   border: 9px solid white;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .movie-container:hover {
   box-shadow: 0 0 20px rgb(122, 96, 255);
   filter: drop-shadow(2px 4px 6px black);
   /* transform: scale(1.05); */
+
+}
+
+.movie-container img {
+  transition: all 0.5s;
+}
+
+.movie-container img:hover{
+
+  transform: scale(1.2);
+
 }
 
 .movie-detail {
