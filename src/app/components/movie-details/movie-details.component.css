@@ -11,7 +11,7 @@
   color: var(--text-color);
   /* padding: 10px; */
   /* background: rgba(122, 96, 255, 0.7); */
-  width: 550px;
+  width: 30%;
   position: relative;
 }
 
@@ -22,7 +22,7 @@
 }
 .youtube-player {
   border: 0;
-  width: 100%;
+  width: 70%;
   height: 536px;
   background-color: black;
   box-shadow: var(--shadow);
@@ -75,6 +75,7 @@
 @media only screen and (max-width: 992px) {
   .youtube-player {
     height: 300px;
+    width: 100%;
   }
 
   .movie-details {
