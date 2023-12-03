@@ -41,37 +41,8 @@ p {
   z-index: 9;
   -webkit-backface-visibility: hidden;
   gap: 10px;
-}
-
-.toolbar::before,
-.toolbar::after {
-  content: "";
-  display: block;
-  height: 16px;
-  /* make pseudo elements sticky as well */
-  position: sticky;
-  -webkit-position: sticky;
-}
-
-/* SHADOW */
-.toolbar::before {
-  top: 48px; /* shadow is at bottom of element, so at 48 + 16 = 64px */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* COVER */
-.toolbar::after {
-  /* linear gradient from background color to transparent acts as
-     a transition effect so the shadow appears gradually */
-  background: linear-gradient(
-    white 10%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0.4) 70%,
-    transparent
-  );
-  top: 0;
-  /* cover should fall over shadow */
-  z-index: 2;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .counter {
@@ -142,5 +113,3 @@ footer a {
   display: flex;
   align-items: center;
 }
-
-
