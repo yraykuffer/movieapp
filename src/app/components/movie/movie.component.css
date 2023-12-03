@@ -1,3 +1,6 @@
+:host {
+  position: relative;
+}
 .movie-container {
   height: 378px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -11,12 +14,11 @@
 .movie-container:hover {
   box-shadow: 0 0 20px rgb(122, 96, 255);
   filter: drop-shadow(2px 4px 6px black);
-  /* transform: scale(1.05); */
 
 }
 
 .movie-container img {
-  transition: all 0.5s;
+  transition: transform 0.8s;
 }
 
 .movie-container img:hover{
@@ -68,7 +70,7 @@ button {
 
   position: absolute;
   height: 20px;
-  top: -18px;
+  top: -12px;
   right: -13px;
   display: block;
   border-radius: 100%;
@@ -79,7 +81,7 @@ button {
 
 }
 
-.movie-container:hover .delete-icon {
+:host:hover .delete-icon {
   display: block;
 }
 
