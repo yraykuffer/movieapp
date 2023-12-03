@@ -1,38 +1,41 @@
 <div class="movie-detail-container">
   <h2>{{ movie.title }}</h2>
-  <iframe
-    width="560"
-    height="315"
-    [src]="movie.trailerLink"
-    class="youtube-player"
-    title="YouTube video player"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
-  <div class="movie-details">
-    <div style="display: flex; flex-direction: column; gap: 20px">
-      <div class="desc-container"><p> {{ movie.description }}</p></div>
-      <div class="thumpnail-container">
-        <img
-          class="thumpnail"
-          src="assets/images/{{ movie.thumpnail }}"
-          alt=""
-        />
-        <div class="movie-details-text">
-
-          <p><strong>Genre:</strong> {{ movie.genre }}</p>
-          <p>
-            <strong>Rating:</strong>
-            <span class="rating">{{ movie.rating }}</span>
-          </p>
-          <p><strong>Duration:</strong> {{ movie.duration }}</p>
-          <p><strong>Date Released:</strong> {{ movie.releasedDate }}</p>
-          <button [class.listed]="movie.listed" (click)="addToWatchList()">
-            {{ movie.listed ? "Added" : "Add" }} to Watchlist
-          </button>
+  <div class="wrapper">
+    <iframe
+      width="560"
+      height="315"
+      [src]="movie.trailerLink"
+      class="youtube-player"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+    <div class="movie-details">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <div class="desc-container">
+          <p>{{ movie.description }}</p>
+        </div>
+        <div class="thumpnail-container">
+          <img
+            class="thumpnail"
+            src="assets/images/{{ movie.thumpnail }}"
+            alt=""
+          />
+          <div class="movie-details-text">
+            <p><strong>Genre:</strong> {{ movie.genre }}</p>
+            <p>
+              <strong>Rating:</strong>
+              <span class="rating">{{ movie.rating }}</span>
+            </p>
+            <p><strong>Duration:</strong> {{ movie.duration }}</p>
+            <p><strong>Date Released:</strong> {{ movie.releasedDate }}</p>
+            <button [class.listed]="movie.listed" (click)="addToWatchList()">
+              {{ movie.listed ? "Added" : "Add" }} to Watchlist
+            </button>
+          </div>
         </div>
       </div>
+      <div class="spot1"></div>
     </div>
-    <div></div>
   </div>
 </div>

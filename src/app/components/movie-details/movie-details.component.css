@@ -8,13 +8,13 @@
 }
 
 .movie-details {
-  color: white;
-  padding: 10px;
-  background: rgba(122, 96, 255, 0.7);
+  color: var(--text-color);
+  /* padding: 10px; */
+  /* background: rgba(122, 96, 255, 0.7); */
+  width: 550px;
+  position: relative;
 }
 
-.movie-details-text {
-}
 
 .thumpnail {
   width: 150px;
@@ -38,9 +38,13 @@
 
 .desc-container {
   display: flex;
-  background: rgb(122, 96, 255);
-  padding: 5px;
+  /* background: rgb(122, 96, 255); */
+  /* padding: 10px; */
   box-sizing: border-box;
+  /* border-radius: 10px; */
+  color: var(--text-color);
+  /* text-indent: 20px; */
+  text-align: justify;
 }
 
 .desc-container p {
@@ -54,11 +58,37 @@
   gap: 20px;
 }
 
-@media only screen and (max-width: 600px) {
+.movie-detail-container .wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 992px) {
   .youtube-player {
     height: 300px;
   }
+
+  .movie-details {
+    width: auto;
+  }
+
+  .movie-detail-container .wrapper {
+    flex-direction: column;
+  }
 }
+
+.spot1 {
+  z-index: -1;
+  height: 500px;
+  top: 0%;
+}
+
+/* @media only screen and (max-width: 600px) {
+  .youtube-player {
+    height: 300px;
+  }
+} */
 
 .listed {
   background-color: green;
@@ -68,7 +98,7 @@
 }
 
 button {
-  border: 0;
+  border: 1px solid gray;
   border-radius: 5px;
   padding: 5px;
 }
